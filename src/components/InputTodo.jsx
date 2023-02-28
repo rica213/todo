@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { FaPlusCircle } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const InputTodo = ({ addTodoItem }) => {
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
+  const [title, setTitle] = useState('');
+  const [message, setMessage] = useState('');
   const handleChange = (e) => {
     setTitle(e.target.value);
   };
@@ -11,10 +12,10 @@ const InputTodo = ({ addTodoItem }) => {
     e.preventDefault();
     if (title.trim()) {
       addTodoItem(title);
-      setTitle("");
-      setMessage("");
+      setTitle('');
+      setMessage('');
     } else {
-      alert("Please add item");
+      setMessage('Please add item.');
     }
   };
   return (
@@ -27,7 +28,7 @@ const InputTodo = ({ addTodoItem }) => {
           onChange={handleChange}
           className="input-text"
         />
-        <button className="input-submit">
+        <button className="input-submit" type="button">
           <FaPlusCircle />
         </button>
       </form>

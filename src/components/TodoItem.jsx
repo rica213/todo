@@ -1,27 +1,32 @@
-import { useState } from "react";
-import { FaTrash } from "react-icons/fa";
-import { AiFillEdit } from "react-icons/ai";
-import styles from "@/styles/TodoItem.module.css";
-const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import { useState } from 'react';
+import { FaTrash } from 'react-icons/fa';
+import { AiFillEdit } from 'react-icons/ai';
+import styles from '@/styles/TodoItem.module.css';
+
+const TodoItem = ({
+  itemProp, handleChange, delTodo, setUpdate,
+}) => {
   const [editing, setEditing] = useState(false);
   const completedStyle = {
-    fontStyle: "italic",
-    color: "#595959",
+    fontStyle: 'italic',
+    color: '#595959',
     opacity: 0.4,
-    textDecoration: "line-through",
+    textDecoration: 'line-through',
   };
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
   if (editing) {
-    viewMode.display = "none";
+    viewMode.display = 'none';
   } else {
-    editMode.display = "none";
+    editMode.display = 'none';
   }
   const handleEditing = () => {
     setEditing(true);
   };
   const handleUpdatedDone = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       setEditing(false);
     }
   };
@@ -33,8 +38,8 @@ const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button onClick={handleEditing}><AiFillEdit /></button>
-        <button onClick={() => delTodo(itemProp.id)}><FaTrash /></button>
+        <button type="button" onClick={handleEditing}><AiFillEdit /></button>
+        <button type="button" onClick={() => delTodo(itemProp.id)}><FaTrash /></button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
         </span>

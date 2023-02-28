@@ -20,10 +20,23 @@ const TodosLogic = () => {
       completed: false,
     },
   ]);
+  const handleChange = (id) => {
+    setTodos((prevState) =>
+      prevState.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      })
+    );
+  };
   return (
     <>
       <InputTodo />
-      <TodosList todosProps={todos} />
+      <TodosList todosProps={todos} handleChange={handleChange} />
     </>
   );
 };

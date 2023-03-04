@@ -45,8 +45,7 @@ This is a learn by doing project from [React Tutorial: A Comprehensive Guide for
 > **React** + **CSS**
 
 <!-- Features -->
-
-### Key Features <a name="key-features"></a>
+## Key Features <a name="key-features"></a>
 
 - **[Set up linters]**
 - **[Edit functionality]**
@@ -142,14 +141,6 @@ If you like this project kindly add a **STAR** ★
 I would like to thank:
 - Microverse
 - My standup team
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> No Question yet
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
